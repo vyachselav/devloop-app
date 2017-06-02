@@ -13,10 +13,11 @@ export class CoffeeshopService {
 
   constructor (private http: Http) {}
 
-  getCoffeeshops(): Promise<string> {
+  getCoffeeshops(): Promise<Coffeeshop[]> {
+  // getCoffeeshops(): Promise<string> {
     return this.http.get(this.coffeeshopsUrl)
       .toPromise()
-      // .then(response => response.json().data as Coffeeshop[])
-      .then(response => JSON.stringify(response.json()) as string);
+      .then(response => response.json() as Coffeeshop[]);
+      // .then(response => JSON.stringify(response.json()) as string);
   }
 }

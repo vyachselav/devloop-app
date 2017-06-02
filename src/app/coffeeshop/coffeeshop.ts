@@ -1,37 +1,64 @@
 export class Coffeeshop {
-  isOpenNow: any;
-  id: any;
-  name: any;
-  rating: any;
-  status: any;
-  longitude: any;
-  latitude: any;
+  isOpenNow: number;
+  id: number;
+  name: string;
+  rating: number;
+  status: number;
+  longitude: number;
+  latitude: number;
   reviewsCount: any;
-  owner: any;
-  pictures: any[];
-  reviews: any[];
-  prices: any[];
-  workMo: any;
-  openedMo: any;
-  closedMo: any;
-  workTu: any;
-  openedTu: any;
-  closedTu: any;
-  workWe: any;
-  openedWe: any;
-  closedWe: any;
-  workTh: any;
-  openedTh: any;
-  closedTh: any;
-  workFr: any;
-  openedFr: any;
-  closedFr: any;
-  workSa: any;
-  openedSa: any;
-  closedSa: any;
-  workSu: any;
-  openedSu: any;
-  closedSu: any;
-  isVip: any;
+  owner: User;
+  pictures: Picture[];
+  reviews: Review[];
+  prices: number[]; // empty in json
+  workMo: number;
+  openedMo: string;
+  closedMo: string;
+  workTu: number;
+  openedTu: string;
+  closedTu: string;
+  workWe: number;
+  openedWe: string;
+  closedWe: string;
+  workTh: number;
+  openedTh: string;
+  closedTh: string;
+  workFr: number;
+  openedFr: string;
+  closedFr: string;
+  workSa: number;
+  openedSa: string;
+  closedSa: string;
+  workSu: number;
+  openedSu: string;
+  closedSu: string;
+  isVip: number;
+}
 
+export interface User {
+  id: number;
+  name: string;
+  email: string;
+  status: number;
+  phone: string;
+  picture: string;
+  about: string;
+}
+
+export interface Picture {
+  id: number;
+  url: string;
+  size: string;
+  type: string;
+}
+
+export interface Review {
+  date: string;
+  id: number;
+  text: string;
+  averageRating: number;
+  ratingCoffee: number;
+  ratingService: number;
+  ratingPrices: number;
+  user: User;
 }

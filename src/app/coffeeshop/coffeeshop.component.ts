@@ -12,7 +12,7 @@ import { CoffeeshopService } from './coffeeshop.service';
 })
 export class CoffeeshopComponent implements OnInit {
   coffeeshops: Coffeeshop[];
-  val: string;
+  // coffeeshops: string;
 
   constructor (private coffeeshopService: CoffeeshopService) {}
 
@@ -21,7 +21,7 @@ export class CoffeeshopComponent implements OnInit {
   getCoffeeshops(): void {
     this.coffeeshopService
       .getCoffeeshops()
-      .then(val => this.val = val);
+      .then(coffeeshops => this.coffeeshops = coffeeshops);
   }
 
 }
