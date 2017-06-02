@@ -4,11 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import {ContactsComponent} from './contacts/contacts.component';
 import {GoodsComponent} from './goods/goods.component';
 
+import {CoffeeshopComponent} from './coffeeshop/coffeeshop.component';
+
 
 const routes: Routes = [
-  { path: '', redirectTo: '/contacts', pathMatch: 'full' },
+  { path: '', redirectTo: '/coffeeshop', pathMatch: 'full' },
   { path: 'contacts',  component: ContactsComponent },
-  { path: 'goods',     component: GoodsComponent }
+  { path: 'goods',     component: GoodsComponent },
+  { path: 'coffeeshop',     component: CoffeeshopComponent }
 ];
 
 @NgModule({

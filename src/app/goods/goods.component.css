@@ -1,3 +1,18 @@
 .container {
   padding-top: 60px;
 }
+
+ul {
+  margin: 30px 0 0 30px;
+}
+
+li {
+  margin: 15px;
+  list-style-type: none;
+}
+
+.goods {
+  list-style-type: none;
+}
+
+h1{display: inline-block; margin-right:10px;}
