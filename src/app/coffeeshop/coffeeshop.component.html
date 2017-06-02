@@ -1,11 +1,16 @@
 <div class="container">
   <h1>Coffeeshop API</h1>
   <div class="row">
-    <!--<ul>qq-->
-      <!--<li *ngFor="let coffeeshop of coffeeshops">-->
-        <!--Q {{coffeeshop.name}}-->
-      <!--</li>-->
-    <!--</ul>-->
-    {{val}}
+
+    <h3>JSON:</h3>
+    <ul>
+      <li *ngFor="let coffeeshop of coffeeshops">
+        <p>id: {{coffeeshop.id}}&nbsp; &nbsp; &nbsp;
+          name: {{coffeeshop.name}} &nbsp; &nbsp; &nbsp; (...);</p>
+      </li>
+    </ul>
+
+
+    <!--{{coffeeshops}}-->
   </div>
 </div>
