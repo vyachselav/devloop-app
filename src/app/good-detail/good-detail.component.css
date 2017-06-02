@@ -1,0 +1,30 @@
+.container {
+  /*height: 200px;*/
+  border: 1px solid #999;
+  box-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+
+.priceInfo {
+  /*width: 300px;*/
+  /*height:50px;*/
+  /*margin: auto 0;*/
+  margin-bottom: 20px;
+  /*background-color: #666;*/
+}
+
+h2 {
+  margin-left: 17.5%;
+}
+
+
+.avatar {
+  margin:auto;
+  display: inline-block;
+  width: 100px;
+  height:100px;
+  vertical-align: middle;
+  background-image: url(../../assets/img/1.png);
+  /*background-color: #555;*/
+}
+
+
