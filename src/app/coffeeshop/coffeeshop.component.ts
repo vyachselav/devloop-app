@@ -51,8 +51,14 @@ export class CoffeeshopComponent implements OnInit {
       .then(coffeeshops => this.coffeeshops = coffeeshops);
   }
 
-  setVal(id: number) {
+  toggleCoffeeshop(id: number) {
     document.getElementById(id.toString()).classList.toggle('Closed');
   }
 
+  toggleAll() {
+    let uls = document.querySelectorAll('h4 + ul');
+    for (let key in uls) {
+      uls[key].classList.toggle('Closed');
+      }
+    }
 }

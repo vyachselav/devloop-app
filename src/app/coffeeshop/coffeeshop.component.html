@@ -2,8 +2,11 @@
   <h1>Coffee-points</h1>
   <div class="row">
     <ul>
+      <button (click)="toggleAll()">Toggle All</button>
       <li *ngFor="let coffeeshop of coffeeshops; let i = index">
-        <h4 (click)="setVal(coffeeshop.id)">Coffeeshop #{{i+1}}; ID: {{coffeeshop.id}}; NAME: {{coffeeshop.name}};</h4>
+        <h4 (click)="toggleCoffeeshop(coffeeshop.id)">
+          Coffeeshop #{{i+1}}; ID: {{coffeeshop.id}}; NAME: {{coffeeshop.name}};
+        </h4>
         <ul class="Closed" id="{{coffeeshop.id}}">
           <li>isOpenNow: {{coffeeshop.isOpenNow}}</li>
           <li>description: {{coffeeshop.description}}</li>
