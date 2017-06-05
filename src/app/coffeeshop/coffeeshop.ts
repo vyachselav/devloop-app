@@ -2,15 +2,17 @@ export class Coffeeshop {
   isOpenNow: number;
   id: number;
   name: string;
+  description: string;
   rating: number;
   status: number;
   longitude: number;
   latitude: number;
-  reviewsCount: any;
+  reviewsCount: number;
+  author: Author;
   owner: User;
   pictures: Picture[];
   reviews: Review[];
-  prices: number[]; // empty in json
+  prices: Price[];
   workMo: number;
   openedMo: string;
   closedMo: string;
@@ -32,7 +34,21 @@ export class Coffeeshop {
   workSu: number;
   openedSu: string;
   closedSu: string;
+  address: string;
+  skype: string;
+  phone: string;
+  email: string;
+  viber: string;
+  telegram: string;
   isVip: number;
+}
+
+export interface Author {
+  id: number;
+  name: string;
+  email: string;
+  status: number;
+  picture: string;
 }
 
 export interface User {
@@ -57,8 +73,23 @@ export interface Review {
   id: number;
   text: string;
   averageRating: number;
+  pluses: string;
+  minuses: string;
   ratingCoffee: number;
   ratingService: number;
   ratingPrices: number;
   user: User;
+}
+
+export interface Price {
+  id: number;
+  cost: number;
+  isCustom: number;
+  service: Service;
+}
+
+export interface Service {
+  id: number;
+  name: string;
+  averageCost: number;
 }

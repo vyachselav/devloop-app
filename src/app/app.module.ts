@@ -16,6 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { CoffeeshopComponent } from './coffeeshop/coffeeshop.component';
 
+import { AgmCoreModule } from '@agm/core';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,10 @@ import { CoffeeshopComponent } from './coffeeshop/coffeeshop.component';
     HttpModule,
     // InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule,
-    JsonpModule
+    JsonpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDugtHKAPtdKpSNJiDQYUJXEHH6hjoBRWg'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
