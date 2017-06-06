@@ -16,4 +16,17 @@ export class CoffeeshopService {
       .toPromise()
       .then(response => response.json() as Coffeeshop[]);
   }
+
+/*  getCoffeeshop(id: number): Promise<Coffeeshop> {
+    return this.getCoffeeshops()
+      .then(coffeeshops => coffeeshops.find(coffeeshop => coffeeshop.id === id));
+  }*/
+
+  getCoffeeshop(id: number): Promise<Coffeeshop> {
+    const url = `${this.coffeeshopsUrl}/${id}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json() as Coffeeshop);
+  }
+
 }

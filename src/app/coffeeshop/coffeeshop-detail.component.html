@@ -1,0 +1,194 @@
+<div  *ngIf="coffeeshop" class="container main-wrapper">
+  <button class="btn" (click)="goBack()">< Back</button>
+  <h3>
+    Coffeeshop ID: {{coffeeshop.id}}; <br> <br> NAME: {{coffeeshop.name}};
+  </h3>
+  <ul>
+    <li>isOpenNow: {{coffeeshop.isOpenNow}}</li>
+    <li>description: {{coffeeshop.description}}</li>
+    <li>rating: {{coffeeshop.rating}}</li>
+    <li>status: {{coffeeshop.status}}</li>
+    <li>longitude: {{coffeeshop.longitude}}</li>
+    <li>latitude: {{coffeeshop.latitude}}</li>
+    <li>reviewsCount: {{coffeeshop.reviewsCount}}</li>
+    <li>address: {{coffeeshop.address}}</li>
+    <li>skype: {{coffeeshop.skype}}</li>
+    <li>phone: {{coffeeshop.phone}}</li>
+    <li>email: {{coffeeshop.email}}</li>
+    <li>viber: {{coffeeshop.viber}}</li>
+    <li>telegram: {{coffeeshop.telegram}}</li>
+    <li>isVip: {{coffeeshop.isVip}}</li>
+
+    <li><span>Working Hours</span>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Work</th>
+          <th>Opened</th>
+          <th>Closed</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th>Monday</th>
+          <td>{{coffeeshop.workMo}}</td>
+          <td>{{coffeeshop.openedMo}}</td>
+          <td>{{coffeeshop.closedMo}}</td>
+        </tr>
+        <tr>
+          <th>Tuesday</th>
+          <td>{{coffeeshop.workTu}}</td>
+          <td>{{coffeeshop.openedTu}}</td>
+          <td>{{coffeeshop.closedTu}}</td>
+        </tr>
+        <tr>
+          <th>Wednesday</th>
+          <td>{{coffeeshop.workWe}}</td>
+          <td>{{coffeeshop.openedWe}}</td>
+          <td>{{coffeeshop.closedWe}}</td>
+        </tr>
+        <tr>
+          <th>Thursday</th>
+          <td>{{coffeeshop.workTh}}</td>
+          <td>{{coffeeshop.openedTh}}</td>
+          <td>{{coffeeshop.closedTh}}</td>
+        </tr>
+        <tr>
+          <th>Friday</th>
+          <td>{{coffeeshop.workFr}}</td>
+          <td>{{coffeeshop.openedFr}}</td>
+          <td>{{coffeeshop.closedFr}}</td>
+        </tr>
+        <tr>
+          <th>Saturday</th>
+          <td>{{coffeeshop.workSa}}</td>
+          <td>{{coffeeshop.openedSa}}</td>
+          <td>{{coffeeshop.closedSa}}</td>
+        </tr>
+        <tr>
+          <th>Sunday</th>
+          <td>{{coffeeshop.workSu}}</td>
+          <td>{{coffeeshop.openedSu}}</td>
+          <td>{{coffeeshop.closedSu}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </li>
+
+    <li>
+      <span>Author:</span>
+      <ul *ngIf="coffeeshop.author; else noAuthor">
+        <li>id: {{coffeeshop.author?.id}}</li>
+        <li>name: {{coffeeshop.author?.name}}</li>
+        <li>email: {{coffeeshop.author?.email}}</li>
+        <li>status: {{coffeeshop.author?.status}}</li>
+        <li>picture:
+          <img src="{{mainUrl + coffeeshop.author?.picture}}" alt="">
+        </li>
+      </ul>
+      <ng-template #noAuthor>[no author]</ng-template>
+    </li>
+
+    <li>
+      <span>Owner:</span>
+      <ul *ngIf="coffeeshop.owner; else noOwner">
+        <li>id: {{coffeeshop.owner?.id}}</li>
+        <li>name: {{coffeeshop.owner?.name}}</li>
+        <li>email: {{coffeeshop.owner?.email}}</li>
+        <li>status: {{coffeeshop.owner?.status}}</li>
+        <li>picture:
+          <img src="{{mainUrl + coffeeshop.owner?.picture}}" alt="">
+        </li>
+        <li>phone: {{coffeeshop.owner?.phone}}</li>
+        <li>about: {{coffeeshop.owner?.about}}</li>
+      </ul>
+      <ng-template #noOwner>[no owner]</ng-template>
+    </li>
+
+    <li>
+      <span>Pictures</span>
+      <div *ngIf="coffeeshop.pictures?.length; else noPictures">
+        <ul *ngFor="let picture of coffeeshop.pictures">
+          <li>
+            <img src="{{mainUrl + picture.url}}" alt="">
+          </li>
+          <li>
+            <span>Picture Info</span>
+            <ul>
+              <li>id: {{picture?.id}}</li>
+              <li>url: {{picture?.url}}</li>
+              <li>size: {{picture?.size}}</li>
+              <li>type: {{picture?.type}}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <ng-template #noPictures>[no pictures]</ng-template>
+    </li>
+
+    <li>
+      <span>Reviews</span>
+      <div *ngIf="coffeeshop.reviews?.length; else noReviews">
+        <ul *ngFor="let review of coffeeshop.reviews">
+          <li>date: {{review?.date}}</li>
+          <li>id: {{review?.id}}</li>
+          <li>text: {{review?.text}}</li>
+          <li>averageRating: {{review?.averageRating}}</li>
+          <li>pluses: {{review?.pluses}}</li>
+          <li>minuses: {{review?.minuses}}</li>
+          <li>ratingCoffee: {{review?.ratingCoffee}}</li>
+          <li>ratingService: {{review?.ratingService}}</li>
+          <li>ratingPrices: {{review?.ratingPrices}}</li>
+          <li>user:
+            <ul *ngIf="review.user">
+              <li>id: {{review.user?.id}}</li>
+              <li>name: {{review.user?.name}}</li>
+              <li>email: {{review.user?.email}}</li>
+              <li>status: {{review.user?.status}}</li>
+              <li>picture:
+                <img src="{{mainUrl + review.user?.picture}}" alt="">
+              </li>
+              <li>phone: {{review.user?.phone}}</li>
+              <li>about: {{review.user?.about}}</li>
+            </ul></li>
+        </ul>
+      </div>
+      <ng-template #noReviews>[no reviews]</ng-template>
+    </li>
+
+    <li>
+      <span>Prices</span>
+      <div *ngIf="coffeeshop.prices?.length; else noPrices">
+        <ul *ngFor="let price of coffeeshop.prices">
+          <li>id: {{price?.id}}</li>
+          <li>cost: {{price?.cost}}</li>
+          <li>isCustom: {{price?.isCustom}}</li>
+          <li>service:
+            <ul>
+              <li>id: {{price.service?.id}}</li>
+              <li>name: {{price.service?.name}}</li>
+              <li>averageCost: {{price.service?.averageCost}}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <ng-template #noPrices>[no prices]</ng-template>
+    </li>
+  </ul>
+
+  <h3>COFFEESHOPS ON MAP:</h3>
+  <agm-map [latitude]="coffeeshop.latitude" [longitude]="coffeeshop.longitude" [zoom]="15">
+    <agm-marker [latitude]="coffeeshop.latitude"
+                [longitude]="coffeeshop.longitude"
+                [label]="coffeeshop.id.toString()"
+                [title]="coffeeshop.name">
+      <agm-info-window [isOpen]="true">
+        <strong>
+          Name: {{coffeeshop.name}}; <br>
+          ID: {{coffeeshop.id}};
+        </strong>
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>

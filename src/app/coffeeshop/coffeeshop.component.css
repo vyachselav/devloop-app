@@ -1,0 +1,46 @@
+.main-wrapper {
+  padding-top: 60px;
+}
+
+agm-map {
+  height: 500px;
+}
+
+img {
+  width:100px;
+  height:100px;
+}
+
+li {
+  margin:10px;
+}
+
+h4 {
+  display: inline-block;
+  margin:10px;
+  cursor: pointer;
+}
+
+ul {
+  margin: 20px 0;
+}
+
+hr {
+  background-color: dodgerblue; height:5px;
+}
+
+.empty {
+  color: #f00;
+}
+
+.Opened *{
+  display: block;
+}
+
+.Closed *{
+  display: none;
+}
+
+.rootTitle {
+  background-color:#666;
+}

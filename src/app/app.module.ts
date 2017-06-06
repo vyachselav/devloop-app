@@ -15,6 +15,8 @@ import { GoodPreviewComponent } from './good-preview/good-preview.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { CoffeeshopComponent } from './coffeeshop/coffeeshop.component';
+import { CoffeeshopDetailComponent } from './coffeeshop/coffeeshop-detail.component';
+import { CoffeeshopService } from './coffeeshop/coffeeshop.service';
 
 import { AgmCoreModule } from '@agm/core';
 
@@ -26,7 +28,8 @@ import { AgmCoreModule } from '@agm/core';
     GoodsComponent,
     GoodDetailComponent,
     GoodPreviewComponent,
-    CoffeeshopComponent
+    CoffeeshopComponent,
+    CoffeeshopDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { AgmCoreModule } from '@agm/core';
       apiKey: 'AIzaSyDugtHKAPtdKpSNJiDQYUJXEHH6hjoBRWg'
     })
   ],
-  providers: [],
+  providers: [ CoffeeshopService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
